@@ -20,7 +20,7 @@ steps:
   id: Push
   args:
   - 'push'
-  - 'gcr.io/cirrus-initial-project/recommendation:latest'
+  - 'gcr.io/cirrus-initial-project/recommendation:v2'
 - name: 'gcr.io/cloud-builders/kubectl'
   id: Deploy
   args:
