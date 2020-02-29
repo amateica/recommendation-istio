@@ -25,7 +25,6 @@ metadata:
   namespace: istio-demo
 spec:
   host: recommendation # Service
-  trafficPolicy: ~
   subsets:
     - labels:   # SELECTOR.
         version: v2 # find pods with label "safe"
