@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: recommendation
-  namespace: tutorial
+  namespace: istio-demo
 spec:
   hosts:
   - recommendation
