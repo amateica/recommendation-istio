@@ -22,11 +22,20 @@ steps:
   - 'push'
   - 'gcr.io/cirrus-initial-project/recommendation:v1'
 - name: 'gcr.io/cloud-builders/kubectl'
-  id: Deploy
+  id: Create deployment
   args:
   - 'apply'
   - '-f'
   - 'java/springboot/kubernetes.yml'
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=istio-cluster'
+- name: 'gcr.io/cloud-builders/kubectl'
+  id: Create Virtual Service
+  args:
+  - 'apply'
+  - '-f'
+  - 'java/springboot/virtualservice.yml'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
   - 'CLOUDSDK_CONTAINER_CLUSTER=istio-cluster'

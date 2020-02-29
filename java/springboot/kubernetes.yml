@@ -5,6 +5,7 @@ metadata:
   namespace: istio-demo
   labels:
     app: recommendation
+    version: v2
 spec:
   replicas: 1
   selector:
@@ -30,6 +31,7 @@ metadata:
   namespace: istio-demo
   labels:
     app: recommendation
+    version: v1
 spec:
   replicas: 1
   selector:
