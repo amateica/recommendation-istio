@@ -11,7 +11,6 @@ spec:
   selector:
     matchLabels:
       app: recommendation
-      version: v2
   template:
     metadata:
       labels:
@@ -39,7 +38,6 @@ spec:
   selector:
     matchLabels:
       app: recommendation
-      version: v1
   template:
     metadata:
       labels:
