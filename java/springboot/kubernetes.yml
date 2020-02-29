@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: recommendation
+  name: recommendation-v2
   namespace: istio-demo
   labels:
     app: recommendation
@@ -18,6 +18,31 @@ spec:
       containers:
       - name: recommendation
         image: gcr.io/cirrus-initial-project/recommendation:v2
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recommendation-v1
+  namespace: istio-demo
+  labels:
+    app: recommendation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: recommendation
+  template:
+    metadata:
+      labels:
+        app: recommendation
+    spec:
+      containers:
+      - name: recommendation
+        image: gcr.io/cirrus-initial-project/recommendation:v1
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
