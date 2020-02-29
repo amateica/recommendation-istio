@@ -9,10 +9,10 @@ spec:
   http:
   - route:
     - destination:
-      host: recommendation
-      subset: version-v1
-    weight: 90
+        host: recommendation
+        subset: version-v1
+      weight: 90
     - destination:
-      host: recommendation
-      subset: version-v2
-    weight: 10
+        host: recommendation
+        subset: version-v2
+      weight: 10
