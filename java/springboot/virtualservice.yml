@@ -11,11 +11,11 @@ spec:
     - destination:
         host: recommendation
         subset: recommendation-v1
-      weight: 70
+      weight: 90
     - destination:
         host: recommendation
         subset: recommendation-v2
-      weight: 30
+      weight: 10
 
 ---
 kind: DestinationRule       # Defining which pods should be part of each subset
