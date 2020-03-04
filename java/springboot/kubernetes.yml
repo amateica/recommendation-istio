@@ -65,4 +65,4 @@ spec:
     port: 8080
   selector:
     app: recommendation
-  type: LoadBalancer
+  type: ClusterIP
